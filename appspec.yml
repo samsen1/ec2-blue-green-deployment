@@ -1,21 +1,2 @@
 version: 0.0
 os: linux
-files:
-  - source: /index.html
-    destination: /var/www/html/
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 20
-      runas: root
-    - location: scripts/cleanup_files
-      timeout: 20
-      runas: root
-    - location: scripts/start_server
-      timeout: 20
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 20
-      runas: root
-
